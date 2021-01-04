@@ -1,7 +1,7 @@
 import 'package:bregzy_vendor/services/network.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
+import 'package:intl/intl.dart';
 import '../constants.dart';
 
 class Custom_Header extends StatelessWidget {
@@ -11,6 +11,10 @@ class Custom_Header extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var now = new DateTime.now();
+    var formatter = new DateFormat('MMM,yyyy/dd');
+    String formattedDate = formatter.format(now);
+
     return FutureBuilder(
       future: getVendorData(),
       builder: (context, snapshot) {
@@ -38,7 +42,7 @@ class Custom_Header extends StatelessWidget {
                     "Hi, ${wpVendor['store_name']}",
                     style: TextStyle(fontSize: 40),
                   ),
-                  Text("DEC, 12/2020"),
+                  Text("$formattedDate"),
                 ],
               ),
               Column(

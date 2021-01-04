@@ -1,9 +1,10 @@
+import 'package:bregzy_vendor/screens/Coupons_screen.dart';
 import 'package:bregzy_vendor/screens/add_product.dart';
+import 'package:bregzy_vendor/screens/home_screen.dart';
 import 'package:bregzy_vendor/screens/products_details.dart';
 import 'package:bregzy_vendor/screens/update_product.dart';
 import 'package:bregzy_vendor/services/network.dart';
 import 'package:bregzy_vendor/widgets/custom_header.dart';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -73,87 +74,31 @@ class _ProductListState extends State<ProductList> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 12),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Text(
-                    "الصفحه الرئيسيه",
-                    style: TextStyle(fontFamily: "Cairo"),
-                  ),
-                  SizedBox(
-                    width: 15,
-                  ),
-                  Icon(
-                    Icons.home,
-                    size: 30.0,
-                    color: KPinkColor,
-                  ),
-                ],
-              ),
-            ),
-            Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 15),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Text(
-                    "اضافة منتج",
-                    style: TextStyle(fontFamily: "Cairo"),
-                  ),
-                  SizedBox(
-                    width: 19,
-                  ),
-                  Icon(
-                    Icons.add,
-                    size: 30.0,
-                    color: KPinkColor,
-                  ),
-                ],
+              child: InkWell(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>Home_Screen()));
+                },
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text(
+                      "الصفحه الرئيسيه",
+                      style: TextStyle(fontFamily: "Cairo"),
+                    ),
+                    SizedBox(
+                      width: 15,
+                    ),
+                    Icon(
+                      Icons.home,
+                      size: 30.0,
+                      color: KPinkColor,
+                    ),
+                  ],
+                ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 12,
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Text(
-                    "حذف منتج",
-                    style: TextStyle(fontFamily: "Cairo"),
-                  ),
-                  SizedBox(
-                    width: 25,
-                  ),
-                  Icon(
-                    Icons.remove,
-                    size: 30.0,
-                    color: KPinkColor,
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 15),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Text(
-                    "تجديد منتج",
-                    style: TextStyle(fontFamily: "Cairo"),
-                  ),
-                  SizedBox(
-                    width: 15,
-                  ),
-                  Icon(
-                    Icons.update,
-                    size: 30.0,
-                    color: KPinkColor,
-                  ),
-                ],
-              ),
-            ),
+            
             Padding(
               padding: const EdgeInsets.symmetric(
                 horizontal: 12,
@@ -186,16 +131,21 @@ class _ProductListState extends State<ProductList> {
               padding: const EdgeInsets.symmetric(
                 horizontal: 12,
               ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Text("الكوبونات", style: TextStyle(fontFamily: "Cairo")),
-                  SizedBox(
-                    width: 27,
-                  ),
-                  FaIcon(FontAwesomeIcons.ticketAlt,
-                      size: 30.0, color: KPinkColor),
-                ],
+              child: InkWell(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> CouponsScreen()));
+                },
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text("الكوبونات", style: TextStyle(fontFamily: "Cairo")),
+                    SizedBox(
+                      width: 27,
+                    ),
+                    FaIcon(FontAwesomeIcons.ticketAlt,
+                        size: 30.0, color: KPinkColor),
+                  ],
+                ),
               ),
             ),
             Padding(

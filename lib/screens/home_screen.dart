@@ -86,22 +86,27 @@ class _Home_ScreenState extends State<Home_Screen> {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Text(
-                    "الصفحه الرئيسيه",
-                    style: TextStyle(fontFamily: "Cairo"),
-                  ),
-                  SizedBox(
-                    width: 15,
-                  ),
-                  Icon(
-                    Icons.home,
-                    size: 30.0,
-                    color: KPinkColor,
-                  ),
-                ],
+              child: InkWell(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> Home_Screen()));
+                },
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text(
+                      "الصفحه الرئيسيه",
+                      style: TextStyle(fontFamily: "Cairo"),
+                    ),
+                    SizedBox(
+                      width: 15,
+                    ),
+                    Icon(
+                      Icons.home,
+                      size: 30.0,
+                      color: KPinkColor,
+                    ),
+                  ],
+                ),
               ),
             ),
             Padding(
@@ -134,16 +139,21 @@ class _Home_ScreenState extends State<Home_Screen> {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 15),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Text("الكوبونات", style: TextStyle(fontFamily: "Cairo")),
-                  SizedBox(
-                    width: 18,
-                  ),
-                  FaIcon(FontAwesomeIcons.ticketAlt,
-                      size: 30.0, color: KPinkColor),
-                ],
+              child: InkWell(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> CouponsScreen()));
+                },
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text("الكوبونات", style: TextStyle(fontFamily: "Cairo")),
+                    SizedBox(
+                      width: 18,
+                    ),
+                    FaIcon(FontAwesomeIcons.ticketAlt,
+                        size: 30.0, color: KPinkColor),
+                  ],
+                ),
               ),
             ),
             Padding(
