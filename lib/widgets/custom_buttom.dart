@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 import '../constants.dart';
+
 // ignore: camel_case_types
 class Custom_buttom extends StatelessWidget {
-
-  final String opname ;
-  final Function onpressed ;
+  final String opname;
+  final Function onpressed;
 
   const Custom_buttom({Key key, this.opname, this.onpressed}) : super(key: key);
 
@@ -15,29 +15,27 @@ class Custom_buttom extends StatelessWidget {
       borderRadius: BorderRadius.circular(40),
       elevation: 6.0,
       child: Container(
-        width: MediaQuery.of(context).size.width*0.3,
+        width: MediaQuery.of(context).size.width * 0.5,
         decoration: BoxDecoration(
           gradient: LinearGradient(
               begin: Alignment.centerLeft,
-              end: Alignment.centerRight ,
+              end: Alignment.centerRight,
               colors: [
                 KPurpleColor,
                 // KPinkColor ,
                 KOrangeColor
-              ]
-          ),
-          borderRadius: BorderRadius.circular(40.0) ,
+              ]),
+          borderRadius: BorderRadius.circular(40.0),
         ),
         child: FlatButton(
-
-          child: Text(opname ,style: TextStyle(
-            color: Colors.white ,
-            fontSize: 20.0
-          ),),
+          child: Text(
+            opname,
+            style: TextStyle(
+                fontFamily: "Cairo", color: Colors.white, fontSize: 13.0),
+          ),
           onPressed: onpressed,
         ),
       ),
     );
   }
 }
-

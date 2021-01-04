@@ -1,6 +1,6 @@
 class Config{
-  static String key = "ck_7942def3a5b2872f75b4c958185b78aa123bfb72" ;
-  static String secret = "cs_75dba98cde3492506e1181007c1eb397573c35a8";
+  static String key = "ck_dc90a5745b669fc5c8cc12dc58338f6d245b3d3d" ;
+  static String secret = "cs_5d142769851995f73b702603ba27153ae436b6ef";
   static String url = "http://bregzy.com/wp-json/wc/v1/";
   static String productsUrl = "products?" ;
 
